@@ -32,7 +32,7 @@
         flex-direction: column;
       }
 
-      /** Start: 通过 ::after 显示加载动画，再在 elm 渲染结束后隐藏动画，从而确保加载动画可以渐进消失 */
+      /** Start: 通过 ::after 显示开屏动画，再在 elm 渲染结束后隐藏动画，从而确保开屏动画可以渐进消失 */
       body::after {
         z-index: 100;
         opacity: 1;
@@ -41,7 +41,7 @@
 
         pointer-events: none; /* 禁用鼠标事件 */
 
-        /* 配置加载动画 */
+        /* 配置开屏动画 */
         height: 100%;
         width: 100%;
         overflow: hidden;

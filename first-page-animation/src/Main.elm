@@ -1,6 +1,6 @@
 module Main exposing (main)
 
-import Browser exposing (Document)
+import Browser
 import Html
     exposing
         ( Html
@@ -100,7 +100,7 @@ hideLoadingAnimation : Html msg
 hideLoadingAnimation =
     node "style"
         []
-        [ -- 隐藏加载动画，并显示 body 下的元素
+        [ -- 隐藏开屏动画，并显示 body 下的元素
           text """
 body::after { opacity: 0; }
 body > * { opacity: 1; }
