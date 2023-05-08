@@ -64,7 +64,7 @@ view { title } =
             [ img
                 [ style "width" "10em"
                 , style "height" "10em"
-                , src "/logo.svg"
+                , src "./logo.svg"
                 ]
                 []
             , text "Welcome to the Elm world!"
