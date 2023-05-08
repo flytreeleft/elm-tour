@@ -2,7 +2,7 @@ Elm Tour - The First Page Animation
 =========================================
 
 - [教程](https://studio.crazydan.org/blog/elm-tour-for-animation-in-the-first-page)
-- [演示](./)
+- [演示](https://flytreeleft-elm-tour.netlify.app/first-page-animation)
 
 ## 项目创建
 
