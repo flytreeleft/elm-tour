@@ -21,7 +21,7 @@ for file in `find ${DIR} -name package.json -type f`; do
         echo "Build ${dir_name} ..."
 
         yarn install \
-        && yarn prod \
+        && WEB_CONTEXT_ROOT_PATH="/${dir_name}" yarn prod \
         && mv dist "${DIST_DIR}"/${dir_name} \
         && data_json="${data_json}{path: './${dir_name}', title: '${title}'},"
     popd

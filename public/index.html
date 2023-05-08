@@ -42,22 +42,25 @@
       <ul></ul>
     </div>
     <script>
-      var response = await fetch("./data.json", {
-          "headers": {
-              "Accept": "application/json",
-              "X-Requested-With": "XMLHttpRequest",
+      async function init() {
+        var response = await fetch('./data.json', {
+          headers: {
+            Accept: 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
           },
-          "method": "GET",
-      });
-      var data = await response.json();
+          method: 'GET'
+        });
+        var data = await response.json();
 
-      var $list = document.querySelector('.tour-list>ul');
-      data.forEach(function (item) {
+        var $list = document.querySelector('.tour-list>ul');
+        data.forEach(function (item) {
           var $li = document.createElement('li');
           $li.innerHTML = '<a href="' + item.path + '">' + item.title + '</a>';
 
           $list.appendChild($li);
-      });
+        });
+      }
+      init();
     </script>
   </body>
 </html>
