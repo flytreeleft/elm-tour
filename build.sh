@@ -10,7 +10,7 @@ rm -rf "${DIST_DIR}"
 mkdir -p "${DIST_DIR}"
 cp -r "${DIR}/public"/* "${DIST_DIR}"/
 
-data_json=""
+data_json="{}"
 
 for file in `find ${DIR} -name package.json -type f`; do
     dir="$(dirname $file)"
@@ -21,9 +21,9 @@ for file in `find ${DIR} -name package.json -type f`; do
         echo "Build ${dir_name} ..."
 
         yarn install \
-        && WEB_CONTEXT_ROOT_PATH="/${dir_name}" yarn prod \
+        && WEB_CONTEXT_ROOT_PATH="/${dir_name}/" yarn prod \
         && mv dist "${DIST_DIR}"/${dir_name} \
-        && data_json="${data_json}{path: './${dir_name}', title: '${title}'},"
+        && data_json="${data_json},{\"path\": \"./${dir_name}\", \"title\": \"${title}\"}"
     popd
 done
 
