@@ -38,7 +38,7 @@ yarn add --dev elm elm-analyse elm-format elm-hot-webpack-loader elm-test elm-we
 - 初始化 Elm 项目：
 
 ```bash
-npm run elm init
+yarn elm init
 ```
 
 - 按需调整 Webpack 配置 `webpack.config.js`
@@ -55,13 +55,13 @@ yarn install
 - 本地调试
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 - 发布构建
 
 ```bash
-npm run prod
+yarn prod
 ```
 
 > 构建产物放在 `dist` 目录下
@@ -69,7 +69,7 @@ npm run prod
 - 安装 Elm 包
 
 ```bash
-npm run elm install xxxx
+yarn elm install xxxx
 ```
 
 ## License
