@@ -30,8 +30,8 @@ yarn add --dev elm elm-analyse elm-format elm-hot-webpack-loader elm-test elm-we
     "dev": "webpack-dev-server --hot --port 4200",
     "prod": "webpack",
     "elm": "elm",
-    "test": "elm-test",
-    "analyse": "elm-analyse -s -p 4201 -o"
+    "elm-test": "elm-test",
+    "elm-analyse": "elm-analyse -s -p 4201 -o"
   },
 ```
 
