@@ -34,10 +34,17 @@
 
       /** Start: 通过 ::after 显示加载动画，再在 elm 渲染结束后隐藏动画，从而确保加载动画可以渐进消失 */
       body::after {
+        z-index: 100;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        transition-delay: 0.2s;
+
+        pointer-events: none; /* 禁用鼠标事件 */
+
+        /* 配置加载动画 */
         height: 100%;
         width: 100%;
         overflow: hidden;
-        z-index: 100;
         position: absolute;
 
         content: "";
@@ -46,11 +53,6 @@
         background-position: center;
         background-size: 15em;
         background-repeat: no-repeat;
-
-        opacity: 1;
-        transition: opacity 0.5s ease-out;
-        transition-delay: 0.2s;
-        pointer-events: none;
       }
 
       body > * {
@@ -59,6 +61,8 @@
       }
       /** End: 在 elm 渲染结束前，都以透明方式隐藏元素 */
     </style>
+
+    <!-- head 位置仅放置 css 等非 js 脚本资源 -->
     <%= // https://github.com/jantimon/html-webpack-plugin/tree/main/examples/custom-insertion-position
       htmlWebpackPlugin
         .tags
@@ -71,6 +75,7 @@
   </head>
 
   <body>
+    <!-- 将 js 资源放在 body 中加载 -->
     <%= htmlWebpackPlugin
           .tags
           .headTags

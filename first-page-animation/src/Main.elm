@@ -33,9 +33,13 @@ main =
     -- https://guide.elm-lang.org/webapps/
     Browser.document
         { init = init
-        , view = view
         , update = update
         , subscriptions = sub
+        , view =
+            \({ title } as model) ->
+                { title = title
+                , body = view model
+                }
         }
 
 
@@ -45,35 +49,6 @@ init flags =
       }
     , Cmd.none
     )
-
-
-view : Model -> Document Msg
-view { title } =
-    { title = title
-    , body =
-        [ div
-            [ style "width" "100%"
-            , style "height" "100%"
-            , style "font-size" "18px"
-            , style "display" "flex"
-            , style "flex-direction" "column"
-            , style "align-items" "center"
-            , style "gap" "2em"
-            , style "padding-top" "5em"
-            ]
-            [ img
-                [ style "width" "10em"
-                , style "height" "10em"
-                , src "./logo.svg"
-                ]
-                []
-            , text "Welcome to the Elm world!"
-            ]
-
-        -- 最后一个渲染节点，表示整个应用视图已处于就绪状态
-        , hideLoadingAnimation
-        ]
-    }
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -86,8 +61,39 @@ sub _ =
     Sub.none
 
 
+view : Model -> List (Html Msg)
+view _ =
+    [ welcome
+
+    -- 最后一个视图函数，表示整个应用视图已处于就绪状态
+    , hideLoadingAnimation
+    ]
+
+
 
 --------------------------------------------------
+
+
+welcome : Html msg
+welcome =
+    div
+        [ style "width" "100%"
+        , style "height" "100%"
+        , style "font-size" "18px"
+        , style "display" "flex"
+        , style "flex-direction" "column"
+        , style "align-items" "center"
+        , style "gap" "2em"
+        , style "padding-top" "5em"
+        ]
+        [ img
+            [ style "width" "10em"
+            , style "height" "10em"
+            , src "./logo.svg"
+            ]
+            []
+        , text "Welcome to the Elm world!"
+        ]
 
 
 hideLoadingAnimation : Html msg
