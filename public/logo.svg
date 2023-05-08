@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- https://elm-lang.org/ -->
+
+<svg
+   viewBox="-600 -600 610 610"
+   preserveAspectRatio="xMidYMid"
+   version="1.1"
+   id="svg18"
+   sodipodi:docname="logo.svg"
+   width="610"
+   height="610"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs22" />
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.72583333"
+     inkscape:cx="391.96326"
+     inkscape:cy="434.67279"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg18" />
+  <g
+     transform="matrix(1,0,0,-1,-295.16905,-294.83095)"
+     id="g16">
+    <polygon
+       fill="rgba(18, 147, 216, 1)"
+       points="280,-90 -280,-90 0,190 "
+       transform="translate(0,-210)"
+       id="polygon2" />
+    <polygon
+       fill="rgba(18, 147, 216, 1)"
+       points="280,-90 -280,-90 0,190 "
+       transform="rotate(-90,-105,105)"
+       id="polygon4" />
+    <polygon
+       fill="rgba(18, 147, 216, 0.75)"
+       points="198,-66 -198,-66 0,132 "
+       transform="rotate(-45,353.3711,-146.3711)"
+       id="polygon6" />
+    <polygon
+       fill="rgba(18, 147, 216, 1)"
+       points="-130,0 0,-130 130,0 0,130 "
+       transform="translate(150)"
+       id="polygon8" />
+    <polygon
+       fill="rgba(18, 147, 216, 0.75)"
+       points="-191,61 69,61 191,-61 -69,-61 "
+       transform="translate(-89,239)"
+       id="polygon10" />
+    <polygon
+       fill="rgba(18, 147, 216, 0.75)"
+       points="130,-44 -130,-44 0,86 "
+       transform="rotate(180,0,53)"
+       id="polygon12" />
+    <polygon
+       fill="rgba(18, 147, 216, 0.75)"
+       points="130,-44 -130,-44 0,86 "
+       transform="rotate(90,203,53)"
+       id="polygon14" />
+  </g>
+</svg>
