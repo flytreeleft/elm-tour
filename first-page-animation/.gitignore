@@ -1,0 +1,9 @@
+.idea/
+*.iml
+
+dist/
+vendor/
+
+elm-stuff/
+node_modules/
+*.log
