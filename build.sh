@@ -8,6 +8,7 @@ DIST_DIR="${DIR}/dist"
 
 rm -rf "${DIST_DIR}"
 mkdir -p "${DIST_DIR}"
+cp -r "${DIR}/public"/* "${DIST_DIR}"/
 
 data_json=""
 
