@@ -42,6 +42,7 @@ npm run elm init
 ```
 
 - 按需调整 Webpack 配置 `webpack.config.js`
+- 参考本项目代码，依次准备 `src/Main.elm`、`public/index.js`、`public/index.html` 等文件
 
 ## 项目开发
 
