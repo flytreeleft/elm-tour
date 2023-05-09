@@ -166,7 +166,7 @@ welcome { theme } =
             ]
         , span
             [ class "pt-8"
-            , class "text-xl"
+            , class "text-center text-xl"
             ]
             [ text "Welcome to the world of "
             , a
