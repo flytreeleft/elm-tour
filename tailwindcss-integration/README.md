@@ -18,6 +18,9 @@ Elm Tour - The Tailwind CSS Integration
 yarn add --dev tailwindcss cssnano
 ```
 
+- 参考本项目代码，依次准备 `tailwind.config.js`、`postcss.config.js`、`public/index.css`
+  等文件。注：`public/index.css` 需在 `public/index.js` 中导入
+
 ## 项目开发
 
 - 安装依赖
