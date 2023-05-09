@@ -191,7 +191,6 @@ if (MODE === "production") {
             // https://github.com/elm-community/elm-webpack-loader
             options: {
               cwd: filepath("."),
-              optimize: true,
               // 在页面中添加 Elm 调试按钮，以方便查看状态变更情况
               debug: true,
             },
