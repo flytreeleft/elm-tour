@@ -4,12 +4,19 @@ import Browser
 import Html
     exposing
         ( Html
+        , a
         , div
         , img
         , node
+        , span
         , text
         )
-import Html.Attributes exposing (src, style)
+import Html.Attributes
+    exposing
+        ( href
+        , src
+        , style
+        )
 
 
 {-| 在 JS 侧通过 flags 传入该配置信息
@@ -89,10 +96,16 @@ welcome =
         [ img
             [ style "width" "10em"
             , style "height" "10em"
-            , src "./logo.svg"
+            , src "./elm-logo.svg"
             ]
             []
-        , text "Welcome to the Elm world!"
+        , span []
+            [ text "Welcome to the "
+            , a
+                [ href "https://elm-lang.org/" ]
+                [ text "Elm" ]
+            , text " world!"
+            ]
         ]
 
 
