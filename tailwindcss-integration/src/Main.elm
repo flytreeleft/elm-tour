@@ -88,6 +88,7 @@ sub _ =
 view : Model -> Html Msg
 view ({ theme } as model) =
     div
+        -- 在最外层 div 节点控制启禁页面的暗黑模式
         [ attribute "theme"
             (case theme of
                 Dark ->
