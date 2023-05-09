@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="<%= htmlWebpackPlugin.options.author %>">
+    <meta name="renderer" content="webkit">
+
+    <link rel="icon" type="image/x-icon" href="<%= htmlWebpackPlugin.options.publicPath %>elm-logo.svg">
+
+    <!-- 内部样式，避免单独请求 css 资源 -->
+    <style>
+      html,
+      body,
+      [data-elm-hot="true"] {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        min-width: 0;
+        min-height: 0;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      /** Start: 通过 ::after 显示开屏动画，再在 elm 渲染结束后隐藏动画，从而确保开屏动画可以渐进消失 */
+      body::after {
+        z-index: 100;
+        opacity: 1;
+        transition: opacity 0.5s ease-out;
+        transition-delay: 0.2s;
+
+        pointer-events: none; /* 禁用鼠标事件 */
+
+        /* 配置开屏动画 */
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+
+        content: "";
+        background-image: url("data:image/svg+xml;base64,<%= htmlWebpackPlugin.options.loading %>");
+        background-color: white; /* 遮挡底部元素 */
+        background-position: center;
+        background-size: 15em;
+        background-repeat: no-repeat;
+      }
+
+      body > * {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+      /** End: 在 elm 渲染结束前，都以透明方式隐藏元素 */
+    </style>
+
+    <!-- head 位置仅放置 css 等非 js 脚本资源 -->
+    <%= // https://github.com/jantimon/html-webpack-plugin/tree/main/examples/custom-insertion-position
+      htmlWebpackPlugin
+        .tags
+        .headTags
+        .filter((tag)=> {
+          return tag.tagName !== 'script'
+        })
+      .join('')
+    %>
+  </head>
+
+  <body>
+    <!-- 将 js 资源放在 body 中加载 -->
+    <%= htmlWebpackPlugin
+          .tags
+          .headTags
+          .filter((tag)=> {
+            return tag.tagName === 'script'
+          })
+          .join('')
+    %>
+    <%= htmlWebpackPlugin.tags.bodyTags %>
+  </body>
+</html>

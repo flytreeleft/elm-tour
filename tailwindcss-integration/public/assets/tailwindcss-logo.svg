@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- https://tailwindcss.com/ -->
+<svg
+   preserveAspectRatio="xMidYMid"
+   viewBox="0 0 51.22623 3.8114754"
+   width="126"
+   height="75"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="tailwindcss-logo.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     id="namedview6"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.4278689"
+     inkscape:cx="198.54765"
+     inkscape:cy="162.83008"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="28"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <path
+     fill-rule="evenodd"
+     clip-rule="evenodd"
+     d="m 25.613615,-13.312262 c -6.805,0 -11.057,3.3819997 -12.759,10.1459997 2.552,-3.382 5.529,-4.65 8.931,-3.805 1.941,0.482 3.329,1.882 4.864,3.432 2.502,2.524 5.398,5.445 11.722,5.445 6.804,0 11.057,-3.382 12.758,-10.145 -2.551,3.382 -5.528,4.65 -8.93,3.804 -1.942,-0.482 -3.33,-1.882 -4.865,-3.431 -2.502,-2.5259997 -5.397,-5.4459997 -11.721,-5.4459997 z m -12.759,15.2179997 c -6.804,0 -11.057,3.382 -12.758,10.1460003 2.552,-3.3820003 5.529,-4.6500003 8.93,-3.8050003 1.942,0.482 3.33,1.8820003 4.865,3.4320003 2.502,2.524 5.397,5.445 11.722,5.445 6.804,0 11.057,-3.381 12.758,-10.1450003 -2.552,3.3820003 -5.529,4.6500003 -8.931,3.8050003 -1.941,-0.483 -3.329,-1.8830003 -4.864,-3.4320003 -2.502,-2.524 -5.398,-5.446 -11.722,-5.446 z"
+     fill="#38bdf8"
+     id="path2" />
+</svg>
