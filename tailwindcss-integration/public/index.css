@@ -1,4 +1,4 @@
-/* 引入 tailwindcss 基础库
+/* 指定 tailwindcss 各类样式在 CSS 文件中的插入位置
  * https://tailwindcss.com/docs/functions-and-directives#tailwind
  */
 @tailwind base;
