@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+// https://tailwindcss.com/docs/installation/using-postcss
 module.exports = {
   // https://github.com/csaltos/elm-tailwindcss
   content: ["./src/**/*.elm"],

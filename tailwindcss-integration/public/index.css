@@ -1,6 +1,7 @@
-/* 导入 tailwindcss 基础库
- * https://tailwindcss.com/docs/installation/using-postcss
+/* 引入 tailwindcss 基础库
+ * https://tailwindcss.com/docs/functions-and-directives#tailwind
  */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;

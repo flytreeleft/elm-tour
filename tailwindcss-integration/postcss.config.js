@@ -1,4 +1,5 @@
 // https://github.com/csaltos/elm-tailwindcss
+// https://tailwindcss.com/docs/installation/using-postcss
 module.exports = {
   plugins: {
     tailwindcss: {},
