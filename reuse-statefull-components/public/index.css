@@ -1,0 +1,12 @@
+/* 指定 tailwindcss 各类样式在 CSS 文件中的插入位置
+ * https://tailwindcss.com/docs/functions-and-directives#tailwind
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+
+.form-radio {
+  @apply cursor-pointer mr-0.5 border-slate-300 text-sky-400 focus:ring-sky-300;
+}
