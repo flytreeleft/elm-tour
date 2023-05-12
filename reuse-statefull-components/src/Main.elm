@@ -115,16 +115,11 @@ view model =
     div
         [ class "w-full h-full"
         , class "px-8 md:px-32 py-8"
-        , class "flex flex-col"
+        , class "flex flex-col items-center"
         ]
         [ heading
         , toolbar model
-        , div
-            [ class "w-full h-full"
-            , class "flex justify-center"
-            ]
-            [ playground model
-            ]
+        , playground model
 
         -- 最后一个视图函数，表示整个应用视图已处于就绪状态
         , hideLoadingAnimation
@@ -141,7 +136,8 @@ playground { lang, mode, markdown } =
         [ value markdown
         , placeholder ""
         , class "w-full lg:w-3/4"
-        , attribute "inner-class" "h-full"
+        , class "grow flex flex-col"
+        , attribute "inner-class" "grow"
         , attribute "lang"
             (case lang of
                 Zh_Hans ->

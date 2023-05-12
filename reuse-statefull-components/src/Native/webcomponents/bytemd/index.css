@@ -1,0 +1,14 @@
+.bytemd {
+  @apply flex flex-col;
+}
+
+.bytemd-body {
+  /* 填满剩余空间 */
+  @apply grow h-auto;
+}
+
+.bytemd-status,
+.bytemd-toolbar {
+  /* 自适应子节点高度 */
+  @apply table;
+}
