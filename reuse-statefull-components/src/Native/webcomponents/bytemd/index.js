@@ -22,12 +22,13 @@ import "katex/dist/katex.css";
 // 只能以 import 方式全局引入样式
 import "./index.css";
 
+// https://lit.dev/docs/components/properties/#when-properties-change
 const commonProperties = {
   bytemd: { state: true },
   // attributes
   value: { attribute: true },
   innerClass: { attribute: "inner-class" },
-  // split, tab, auto
+  // 可选值: split, tab, auto
   mode: { attribute: true },
   lang: { attribute: true },
   placeholder: { attribute: true },
@@ -36,10 +37,13 @@ const commonProperties = {
 export class ByteMDEditor extends LitElement {
   static properties = commonProperties;
 
+  // 不使用 shadow dom 以支持全局样式设置
+  // https://lit.dev/docs/components/shadow-dom/#implementing-createrenderroot
   createRenderRoot() {
     return this;
   }
 
+  // Note: 首次初始化已完成，此刻，render() 模板中的节点均已就绪
   firstUpdated() {
     this.bytemd = new Editor({
       target: this.renderRoot,

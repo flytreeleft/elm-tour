@@ -134,7 +134,7 @@ playground : Model -> Html Msg
 playground { lang, mode, markdown } =
     node "bytemd-editor"
         [ value markdown
-        , placeholder ""
+        , placeholder "现在就用 Markdown 来写点什么吧 :)"
         , class "w-full lg:w-3/4"
         , class "grow flex flex-col"
         , attribute "inner-class" "grow"
