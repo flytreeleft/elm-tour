@@ -8,6 +8,9 @@
     <meta name="renderer" content="webkit">
 
     <link rel="icon" type="image/x-icon" href="<%= htmlWebpackPlugin.options.publicPath %>elm-logo.svg">
+    <script>
+      window.webCtxRootPath = "<%= htmlWebpackPlugin.options.publicPath %>".replace(/\/+$/, '');
+    </script>
 
     <!-- 内部样式，避免单独请求 css 资源 -->
     <style>
