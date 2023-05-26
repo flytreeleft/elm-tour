@@ -10,17 +10,22 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // Production CSS assets - separate, minimised file
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const MODE =
   process.env.npm_lifecycle_event === "prod" ? "production" : "development";
 const WEB_CONTEXT_ROOT_PATH = process.env.WEB_CONTEXT_ROOT_PATH;
+
+const webCtxRootPath = WEB_CONTEXT_ROOT_PATH ? WEB_CONTEXT_ROOT_PATH : "";
 const withDebug = !process.env.npm_config_nodebug && MODE === "development";
 // this may help for Yarn users
 // const withDebug = !npmParams.includes("--nodebug");
 console.log(
   "\x1b[36m%s\x1b[0m",
-  `** elm-webpack-starter: mode "${MODE}", withDebug: ${withDebug}\n`
+  `** elm-webpack-starter: mode "${MODE}"` +
+    `, withDebug: ${withDebug}` +
+    `, webCtxRootPath: "${webCtxRootPath}"` +
+    `\n`
 );
 
 const srcDir = "src";
@@ -41,9 +46,11 @@ const common = {
   entry: filepath(publicDir, "index.js"),
   output: {
     path: filepath("dist"),
-    publicPath: "",
+    // 必须指定，否则，动态导入的 js 路径采用的是相对路径，
+    // 在浏览器路由到其他子路径时，会出现 js 无法加载的问题
+    publicPath: webCtxRootPath,
     // FIXME webpack -p automatically adds hash when building for production
-    filename: MODE === "production" ? "[name]-[hash].js" : "index.js",
+    filename: MODE === "production" ? "[name]-[contenthash].js" : "index.js",
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -55,7 +62,7 @@ const common = {
 
       // 指定 html 模板文件位置
       template: filepath(publicDir, "index.html"),
-      publicPath: WEB_CONTEXT_ROOT_PATH ? WEB_CONTEXT_ROOT_PATH : "/",
+      publicPath: webCtxRootPath,
 
       // 禁用 css 与 js 自动注入机制，以便于在模板内控制资源的注入位置，
       // 确保 js 始终在 body 标签内加载，降低 js 加载对首页加载动画的影响
@@ -112,7 +119,8 @@ if (MODE === "development") {
             {
               loader: "css-loader",
               options: {
-                url: false,
+                // 启用对 css 中资源的引用路径处理
+                url: true,
               },
             },
             "postcss-loader",
@@ -156,7 +164,10 @@ if (MODE === "production") {
         new TerserPlugin({
           parallel: true,
         }),
-        new OptimizeCSSAssetsPlugin({}),
+        // https://www.npmjs.com/package/css-minimizer-webpack-plugin
+        new CssMinimizerPlugin({
+          parallel: true,
+        }),
       ],
     },
     plugins: [
@@ -178,7 +189,7 @@ if (MODE === "production") {
       new MiniCssExtractPlugin({
         // Options similar to the same options in webpackOptions.output
         // both options are optional
-        filename: "[name]-[hash].css",
+        filename: "[name]-[contenthash].css",
       }),
     ],
     module: {
@@ -203,7 +214,8 @@ if (MODE === "production") {
             {
               loader: "css-loader",
               options: {
-                url: false,
+                // 启用对 css 中资源的引用路径处理
+                url: true,
               },
             },
             "postcss-loader",

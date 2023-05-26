@@ -14,13 +14,27 @@ yarn init
 
 # 添加依赖
 yarn add --dev @babel/core @babel/preset-env
-yarn add --dev webpack webpack-cli webpack-dev-middleware webpack-dev-server webpack-hot-middleware webpack-merge webpack-node-externals
-yarn add --dev clean-webpack-plugin copy-webpack-plugin html-webpack-plugin terser-webpack-plugin mini-css-extract-plugin optimize-css-assets-webpack-plugin
-yarn add --dev raw-loader babel-loader css-loader file-loader postcss-loader resolve-url-loader style-loader url-loader
+yarn add --dev \
+  webpack webpack-cli \
+  webpack-dev-middleware webpack-dev-server \
+  webpack-hot-middleware webpack-merge \
+  webpack-node-externals
+yarn add --dev \
+  clean-webpack-plugin copy-webpack-plugin \
+  html-webpack-plugin terser-webpack-plugin \
+  mini-css-extract-plugin css-minimizer-webpack-plugin
+yarn add --dev \
+  raw-loader babel-loader \
+  css-loader file-loader \
+  postcss-loader resolve-url-loader \
+  style-loader url-loader
 yarn add --dev autoprefixer
 
 # Note: 需要下载 elm 包，可能需要配置代理
-yarn add --dev elm elm-analyse elm-format elm-hot-webpack-loader elm-test elm-webpack-loader
+yarn add --dev \
+  elm elm-analyse \
+  elm-format elm-hot-webpack-loader \
+  elm-test elm-webpack-loader
 ```
 
 - 在 `package.json` 中添加脚本：
