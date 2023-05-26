@@ -48,7 +48,7 @@ const common = {
     path: filepath("dist"),
     // 必须指定，否则，动态导入的 js 路径采用的是相对路径，
     // 在浏览器路由到其他子路径时，会出现 js 无法加载的问题
-    publicPath: webCtxRootPath,
+    publicPath: webCtxRootPath + "/",
     // FIXME webpack -p automatically adds hash when building for production
     filename: MODE === "production" ? "[name]-[contenthash].js" : "index.js",
   },
