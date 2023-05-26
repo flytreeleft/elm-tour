@@ -22,7 +22,8 @@ yarn add --dev \
 yarn add --dev \
   clean-webpack-plugin copy-webpack-plugin \
   html-webpack-plugin terser-webpack-plugin \
-  mini-css-extract-plugin css-minimizer-webpack-plugin
+  mini-css-extract-plugin \
+  cssnano css-minimizer-webpack-plugin
 yarn add --dev \
   raw-loader babel-loader \
   css-loader file-loader \
